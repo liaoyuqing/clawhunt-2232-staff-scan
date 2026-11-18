@@ -1,0 +1,61 @@
+{
+  "count": 8,
+  "items": [
+    {
+      "result": "ok",
+      "file": "docs/screens/result-ok.png",
+      "color": "#07c160",
+      "title": "签到成功",
+      "vibrate": "short"
+    },
+    {
+      "result": "already_checked_in",
+      "file": "docs/screens/result-already_checked_in.png",
+      "color": "#faad14",
+      "title": "已签到",
+      "vibrate": "none"
+    },
+    {
+      "result": "expired_code",
+      "file": "docs/screens/result-expired_code.png",
+      "color": "#fa5151",
+      "title": "电子票已过期",
+      "vibrate": "none"
+    },
+    {
+      "result": "wrong_event",
+      "file": "docs/screens/result-wrong_event.png",
+      "color": "#fa5151",
+      "title": "不是本场活动",
+      "vibrate": "none"
+    },
+    {
+      "result": "invalid_code",
+      "file": "docs/screens/result-invalid_code.png",
+      "color": "#fa5151",
+      "title": "无法识别的票码",
+      "vibrate": "long"
+    },
+    {
+      "result": "not_member",
+      "file": "docs/screens/result-not_member.png",
+      "color": "#fa5151",
+      "title": "该票不属于会员",
+      "vibrate": "long"
+    },
+    {
+      "result": "event_closed",
+      "file": "docs/screens/result-event_closed.png",
+      "color": "#fa5151",
+      "title": "活动已结束签到",
+      "vibrate": "long"
+    },
+    {
+      "result": "server_error",
+      "file": "docs/screens/result-server_error.png",
+      "color": "#fa5151",
+      "title": "签到失败",
+      "vibrate": "long"
+    }
+  ]
+}

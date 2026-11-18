@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/staff/scan"
+  ],
+  "window": {
+    "navigationBarTitleText": "员工扫码签到",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f5f5f5"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

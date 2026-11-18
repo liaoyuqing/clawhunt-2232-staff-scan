@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "扫码签到",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-switch": "tdesign-miniprogram/switch/switch",
+    "t-popup": "tdesign-miniprogram/popup/popup"
+  }
+}

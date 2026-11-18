@@ -1,0 +1,5 @@
+# tsc 原始输出
+# 命令: npx tsc --noEmit
+# 环境: Node v24.22.2 / TypeScript 5.9.3
+# 时间: 2026-11-18 22:37:26 +0800
+EXIT=0

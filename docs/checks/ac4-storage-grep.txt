@@ -1,0 +1,13 @@
+# AC4 核对：最近扫码记录不写本地缓存
+
+核对命令（在仓库根目录执行）：
+
+    grep -rn "setStorage\|getStorage\|localStorage\|sessionStorage" src/
+
+实际输出：
+
+src/types/wx.ts:23:  setStorage(option: { key: string; data: unknown; success?: () => void; fail?: () => void }): void;
+src/types/wx.ts:24:  setStorageSync(key: string, data: unknown): void;
+src/types/wx.ts:25:  getStorageSync(key: string): unknown;
+
+预期：命中只出现在类型声明文件 src/types/wx.ts 的接口定义里，业务代码无任何调用。

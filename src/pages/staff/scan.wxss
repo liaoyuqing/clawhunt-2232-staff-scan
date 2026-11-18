@@ -1,0 +1,40 @@
+/* pages/staff/scan.wxss */
+.page { min-height: 100vh; background: #f5f6f7; padding-bottom: 32rpx; }
+.forbidden { padding: 160rpx 48rpx; text-align: center; }
+.forbidden__title { font-size: 44rpx; font-weight: 600; color: #1f1f1f; }
+.forbidden__desc { margin: 16rpx 0 64rpx; color: #888; font-size: 28rpx; }
+
+.header { background: #fff; padding: 32rpx; margin-bottom: 16rpx; }
+.header__name { font-size: 34rpx; font-weight: 600; color: #1f1f1f; }
+.header__counts { margin-top: 12rpx; display: flex; align-items: baseline; }
+.header__counts-label { color: #888; font-size: 26rpx; margin-right: 8rpx; }
+.header__counts-arrived { color: #07c160; font-size: 44rpx; font-weight: 700; }
+.header__counts-sep { margin: 0 6rpx; color: #ccc; }
+.header__counts-expected { color: #666; font-size: 32rpx; }
+.header__switch { margin-top: 8rpx; color: #0052d9; font-size: 26rpx; }
+
+.picker { background: #fff; border-radius: 24rpx; padding: 16rpx 0; }
+.picker__item { padding: 28rpx 32rpx; font-size: 30rpx; border-bottom: 1rpx solid #f0f0f0; }
+.picker__item--active { color: #0052d9; font-weight: 600; }
+
+.scan { padding: 48rpx 32rpx 16rpx; }
+.setting { display: flex; align-items: center; gap: 16rpx; padding: 24rpx 32rpx; background: #fff; }
+.setting__hint { color: #999; font-size: 24rpx; }
+
+.toast { margin: 24rpx 32rpx 0; padding: 24rpx; background: #fff1f0; border-left: 8rpx solid #fa5151; border-radius: 16rpx; color: #a8071a; font-size: 26rpx; }
+
+.permission { margin: 24rpx 32rpx; padding: 24rpx; background: #fff4e6; border-radius: 16rpx; display: flex; align-items: center; justify-content: space-between; }
+.permission__text { color: #8a4b00; font-size: 26rpx; }
+
+.recent { margin-top: 24rpx; background: #fff; }
+.recent__title { padding: 24rpx 32rpx 8rpx; color: #888; font-size: 26rpx; }
+.recent__empty { padding: 32rpx; color: #bbb; font-size: 26rpx; text-align: center; }
+.recent__row { display: flex; justify-content: space-between; padding: 24rpx 32rpx; border-top: 1rpx solid #f5f5f5; }
+.recent__code { color: #333; font-size: 28rpx; }
+.recent__title-text { font-size: 26rpx; }
+
+.card { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; }
+.card__icon { font-size: 96rpx; }
+.card__title { margin-top: 24rpx; font-size: 48rpx; font-weight: 700; }
+.card__subtitle { margin-top: 16rpx; font-size: 32rpx; opacity: .9; }
+.card__hint { margin-top: 24rpx; font-size: 30rpx; }

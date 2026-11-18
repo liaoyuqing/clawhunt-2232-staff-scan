@@ -1,0 +1,15 @@
+node_modules/
+*.log
+.DS_Store
+
+# 本目录可能残留的输入法/系统临时文件，以及本地提交载荷（不属于交付物）
+*.config
+*.dat
+*.bin
+*.db
+*.ini
+*.stat
+Backup/
+precheck*.json
+submit-v2.json
+submit-result.json

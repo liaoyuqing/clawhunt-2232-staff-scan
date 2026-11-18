@@ -1,0 +1,21 @@
+# npm test 原始输出（返工 v3：新增页面注册层状态同步用例）
+# 命令: npm test  (vitest run)
+# 环境: Node v24.22.2 / vitest 2.1.9
+# 时间: 2026-11-18 22:37:21 +0800
+
+
+> mini-staff-scan@1.0.0 test
+> vitest run
+
+
+ RUN  v2.1.9 E:/AI接单/Clawhunt/delivery/2232
+
+ ✓ tests/scan.test.ts (33 tests) 53ms
+
+ Test Files  1 passed (1)
+      Tests  33 passed (33)
+   Start at  22:37:22
+   Duration  3.06s (transform 149ms, setup 0ms, collect 144ms, tests 53ms, environment 0ms, prepare 88ms)
+
+
+EXIT=0

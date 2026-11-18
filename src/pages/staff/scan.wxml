@@ -1,0 +1,82 @@
+<!-- pages/staff/scan.wxml · 员工扫码签到页 -->
+<view class="page">
+  <!-- 无权限：非 event_staff / site_admin 直接打开时 -->
+  <view wx:if="{{forbidden}}" class="forbidden">
+    <view class="forbidden__title">无权限</view>
+    <view class="forbidden__desc">该页面只对活动工作人员开放</view>
+    <t-button theme="primary" size="large" bindtap="onDenyBack">返回上一页</t-button>
+  </view>
+
+  <block wx:else>
+    <!-- 顶部：当前活动与已到/应到，点击切换当天其他活动 -->
+    <view class="header" bindtap="onToggleEventPicker">
+      <view class="header__name">{{event.name}}</view>
+      <view class="header__counts">
+        <text class="header__counts-label">已到</text>
+        <text class="header__counts-arrived">{{event.arrived}}</text>
+        <text class="header__counts-sep">/</text>
+        <text class="header__counts-expected">{{event.expected}}</text>
+      </view>
+      <view class="header__switch">切换活动</view>
+    </view>
+
+    <!-- 切换当天其他活动的浮层 -->
+    <t-popup visible="{{pickerVisible}}" placement="top" bind:visible-change="onPickerVisibleChange">
+      <view class="picker">
+        <view
+          wx:for="{{events}}"
+          wx:key="id"
+          class="picker__item {{item.id === event.id ? 'picker__item--active' : ''}}"
+          data-id="{{item.id}}"
+          bindtap="onSelectEvent"
+        >{{item.name}}（{{item.arrived}}/{{item.expected}}）</view>
+      </view>
+    </t-popup>
+
+    <!-- 主按钮：拉起扫码 -->
+    <view class="scan">
+      <t-button
+        class="scan__button"
+        theme="primary"
+        size="large"
+        block
+        loading="{{scanning}}"
+        bindtap="onScan"
+      >扫码签到</t-button>
+    </view>
+
+    <!-- 连续扫码开关，默认开启 -->
+    <view class="setting">
+      <text>连续扫码</text>
+      <t-switch value="{{continuous}}" bind:change="onContinuousChange" />
+      <text class="setting__hint">开启后结果卡消失自动再次拉起扫码</text>
+    </view>
+
+    <!-- 网络/加载失败提示：只提示重试，不在本地排队补交 -->
+    <view wx:if="{{toast}}" class="toast">{{toast}}</view>
+
+    <!-- 相机权限被拒：引导去设置 -->
+    <view wx:if="{{permissionDenied}}" class="permission">
+      <text class="permission__text">相机权限未开启，无法扫码</text>
+      <t-button size="small" theme="primary" variant="outline" bindtap="onOpenSetting">去设置</t-button>
+    </view>
+
+    <!-- 最近扫码记录：只存在内存，不写本地缓存 -->
+    <view class="recent">
+      <view class="recent__title">最近扫码（{{recent.length}}/20）</view>
+      <view wx:if="{{recent.length === 0}}" class="recent__empty">还没有扫码记录</view>
+      <view wx:for="{{recent}}" wx:key="id" class="recent__row">
+        <view class="recent__code">{{item.code}}</view>
+        <view class="recent__title-text" style="color: {{item.color}}">{{item.title}}</view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 全屏结果卡：1.5 秒后消失 -->
+  <view wx:if="{{card}}" class="card" style="background: {{card.color}}">
+    <view class="card__icon">{{card.icon === 'success' ? '✓' : card.icon === 'info' ? 'i' : card.icon === 'warning' ? '!' : '×'}}</view>
+    <view class="card__title">{{card.title}}</view>
+    <view wx:if="{{card.subtitle}}" class="card__subtitle">{{card.subtitle}}</view>
+    <view wx:if="{{card.result === 'expired_code'}}" class="card__hint">请会员刷新电子票</view>
+  </view>
+</view>

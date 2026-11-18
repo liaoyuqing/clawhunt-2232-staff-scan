@@ -1,0 +1,22 @@
+{
+  "description": "会员空间平台 · 员工扫码签到页",
+  "miniprogramRoot": "src/",
+  "compileType": "miniprogram",
+  "appid": "touristappid",
+  "projectname": "mini-staff-scan",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true,
+    "packNpmManually": true,
+    "packNpmRelationList": [
+      {
+        "packageJsonPath": "./package.json",
+        "miniprogramNpmDistDir": "./src/"
+      }
+    ]
+  },
+  "libVersion": "3.5.5"
+}
